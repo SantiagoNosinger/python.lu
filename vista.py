@@ -16,7 +16,7 @@ class VistaProductos:
     def crear_widgets(self):
         # Crear un marco para los campos de entrada
         input_frame = tk.Frame(self.ventana)
-        input_frame.grid(row=0, column=1, padx=5, pady=5, sticky="nsew")
+        input_frame.grid(row=0, column=0, padx=5, pady=5, sticky="nsew")
 
         # Etiquetas
         tk.Label(input_frame, text='Artículo:').grid(row=0, column=0, padx=5, pady=5)
@@ -50,7 +50,7 @@ class VistaProductos:
         # Lista de productos
         self.tree = ttk.Treeview(self.ventana, columns=('id', 'articulo', 'producto', 'talle', 'unidades', 'precio'),
                                  show="headings")
-        self.tree.grid(row=0, column=0, padx=5, pady=5, sticky="nsew")
+        self.tree.grid(row=1, column=0, padx=5, pady=5, sticky="nsew")
 
         # Ajustar las columnas
         self.tree.column('id', width=50, anchor='center')
@@ -73,14 +73,14 @@ class VistaProductos:
 
         # Agregar una barra de desplazamiento para la tabla
         scrollbar = tk.Scrollbar(self.ventana, orient='vertical', command=self.tree.yview)
-        scrollbar.grid(row=0, column=2, padx=5, pady=5, sticky="ns")
+        scrollbar.grid(row=1, column=1, padx=5, pady=5, sticky="ns")
 
         # Alinear la tabla y la barra de desplazamiento
         self.tree.configure(yscrollcommand=scrollbar.set)
 
         # Entradas para buscar productos
         buscar_frame = tk.Frame(self.ventana)
-        buscar_frame.grid(row=1, column=0, padx=5, pady=5)
+        buscar_frame.grid(row=2, column=0, padx=2, pady=2)
 
         self.entrada_busqueda = tk.Entry(buscar_frame, width=100)
         self.entrada_busqueda.grid(row=0, column=0, padx=5, pady=5)
