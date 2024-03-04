@@ -1,13 +1,12 @@
 import modelo
 
-
+#se crea el controlador
 class ControladorProductos:
     def __init__(self):
         self.modelo = modelo.ModeloProductos()
 
     def agregar_producto(self, art, producto, talle, unidades, precio):
         self.modelo.agregar_producto(art, producto, talle, unidades, precio)
-
     def obtener_productos(self):
         return self.modelo.obtener_productos()
 
@@ -22,3 +21,4 @@ class ControladorProductos:
 
     def buscar_productos(self, busqueda):
         return self.modelo.buscar_productos(busqueda)
+    
